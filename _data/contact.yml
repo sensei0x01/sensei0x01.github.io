@@ -6,13 +6,20 @@
 - type: twitter
   icon: "fa-brands fa-x-twitter"
 
+- type: medium
+  icon: "fa-brands fa-medium"
+  url: https://medium.com/@sensei0x01
+
 - type: email
   icon: "fas fa-envelope"
+  email: sensei0x01@outlook.com
   noblank: true # open link in current tab
 
-- type: rss
-  icon: "fas fa-rss"
-  noblank: true
+
+
+# - type: rss
+#   icon: "fas fa-rss"
+#   noblank: true
 # Uncomment and complete the url below to enable more contact options
 #
 # - type: mastodon
