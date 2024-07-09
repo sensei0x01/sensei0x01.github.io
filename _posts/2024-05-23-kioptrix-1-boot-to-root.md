@@ -163,6 +163,8 @@ We have an exploit for "Apache mod_ssl < 2.8.7 OpenSSL — `OpenFuckV2.c` Remote
 
 This samba version is also vulnerable to remote code execution `trans2open` .
 
+---
+
 ## 👨🏻‍💻Exploitation
 
 From the enumeration section there are two methods to have a shell on the target machine, let’s explain each of them.
@@ -397,6 +399,8 @@ Now it's time to run the exploit.
 ![Desktop View](/assets/img/posts/2024-05-23-kioptrix-1-boot-to-root/pic15.png)
 
 We’ve got **root** access!!
+
+---
 
 ## 💥Post-Exploitation
 
