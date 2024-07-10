@@ -2,7 +2,7 @@
 title: "Kioptrix 1: Boot-to-Root"
 date: 2024-05-23 17:17 +0300
 categories: [VulnHub, Easy-VulnHub]
-tags: [CTF, Walkthrough, OpenFuck, trans2open]
+tags: [CTF, Walkthrough, OpenFuck, trans2open, Kernel Exploit]
 author: sensei0x01
 image: "/assets/img/posts/2024-05-23-kioptrix-1-boot-to-root/banner.png"
 ---
@@ -23,7 +23,7 @@ Kioptrix Level 1 is a vulnerable virtual machine designed for security enthusias
 
 - VMware workstation
 - Kali Linux VM
-- [Kioptrix Level 1](https://www.vulnhub.com/entry/kioptrix-level-1-1,22/)
+- [Kioptrix Level 1](https://www.vulnhub.com/entry/kioptrix-level-1-1,22/) VM
 
 ---
 
@@ -74,7 +74,7 @@ Now that we know the IP address of the target machine, it’s time to scan the p
 target=192.168.1.104
 sudo nmap -sS -T4 -p- -sVC -O $target -oN scan-result.txt
 ```
-let’s break this command down:
+Let’s break this command down:
 - `sudo`: to run it with root privileges so that we can modify the TCP default connection (Three-way handshake) to make our scan faster.
 - `-sS` : for [stealthy scan](https://nmap.org/book/synscan.html)
 - `-T4` : for aggressive [timing templates](https://nmap.org/book/performance-timing-templates.html)
@@ -359,11 +359,11 @@ The needed arguments to run the exploit are:
 ./OpenFuck target box [port] [-c N]
 ```
 
-- `target` : since the running version of Apache is 1.3.20 and the OS is RedHat it’s one of these two values (0x6a or 0x6b).
+- `target` : since the running version of Apache is 1.3.20 and the OS is RedHat it’s one of these two values (`0x6a` or `0x6b`).
 - `box` : in our case, it is **"192.168.1.104"**.
-- `port` : 443.
+- `port` : **443**.
 
-There are two potential values for the box parameter, as long as the target machine is RedHat. Let's try using 0x6a.
+There are two potential values for the box parameter, as long as the target machine is RedHat. Let's try using `0x6a`.
 
 ![Desktop View](/assets/img/posts/2024-05-23-kioptrix-1-boot-to-root/pic11.png)
 

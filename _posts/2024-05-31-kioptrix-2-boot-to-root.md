@@ -2,7 +2,7 @@
 title: "Kioptrix 2: Boot-to-Root"
 date: 2024-05-31 17:17 +0300
 categories: [VulnHub, Easy-VulnHub]
-tags: [CTF, Walkthrough, SQLI, Command Injection]
+tags: [CTF, Walkthrough, SQLI, Command Injection, Kernel Exploit]
 author: sensei0x01
 image: "/assets/img/posts/2024-05-31-kioptrix-2-boot-to-root/banner.png"
 ---
@@ -23,7 +23,7 @@ Kioptrix Level 2 is a continuation of the Kioptrix series, designed to further h
 
 - VMware workstation
 - Kali Linux VM
-- [Kioptrix Level 2](https://www.vulnhub.com/entry/kioptrix-level-11-2,23/)
+- [Kioptrix Level 2](https://www.vulnhub.com/entry/kioptrix-level-11-2,23/) VM
 
 ---
 
@@ -33,7 +33,7 @@ Download the **".rar"** file from the VulnHub page mentioned above and extract i
 
 ![Desktop View](/assets/img/posts/2024-05-31-kioptrix-2-boot-to-root/pic1.png)
 
-Modify line 46 of the “CentOs4.5.vmx” file from `ethernet0.networkName = "Bridged"` to `ethernet0.networkName = "NAT"`.
+Modify line 46 of the **"CentOs4.5.vmx"** file from `ethernet0.networkName = "Bridged"` to `ethernet0.networkName = "NAT"`.
 
 ![Desktop View](/assets/img/posts/2024-05-31-kioptrix-2-boot-to-root/pic2.png)
 
@@ -59,7 +59,7 @@ After installing the VM, we need to determine which IP address has been assigned
  sudo nmap -sn 192.168.109.0/24 --exclude 192.168.109.131
 ```
 
-**"192.168.109.0/24"** is the subnet address of the NAT virtual network in my VMWare Workstation. It might be different on your device. You can exclude hosts or entire networks with the `--exclude` option. **"192.168.109.131"** is the IP address of the Kali VM.
+**"192.168.109.0/24"** is the subnet address of the NAT virtual network in my VMware Workstation. It might be different on your device. You can exclude hosts or entire networks with the `--exclude` option. **"192.168.109.131"** is the IP address of the Kali VM.
 
 When the scan is complete, you will see a result like this on your terminal:
 
@@ -93,7 +93,7 @@ target=192.168.109.146
 sudo nmap -sS -T4 -p- -sVC -O $target -oN scan-result.txt
 ```
 
-let’s break this command down:
+Let’s break this command down:
 - `sudo`: to run it with root privileges so that we can modify the TCP default connection (Three-way handshake) to make our scan faster.
 - `-sS` : for [stealthy scan](https://nmap.org/book/synscan.html)
 - `-T4` : for aggressive [timing templates](https://nmap.org/book/performance-timing-templates.html)
