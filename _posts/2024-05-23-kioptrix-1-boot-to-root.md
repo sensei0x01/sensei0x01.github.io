@@ -84,7 +84,7 @@ Let’s break this command down:
 - `-O` : [OS detection](https://nmap.org/book/man-os-detection.html)
 - `-oN` : save the scan results in **"scan-result.txt"**
 
-Here are the result of the Nmap scan:
+Here is the result of the `nmap` scan:
 
 ```shell
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-05-22 14:45 EDT

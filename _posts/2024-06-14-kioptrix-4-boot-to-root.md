@@ -107,7 +107,7 @@ Now that the machine has been created, power it on.
 
 ## 🔍Host Discovery
 
-After installing the VM, we need to determine the IP address assigned to it. Many tools can accomplish this. In this article, we’ll be using 'netdiscover':
+After installing the VM, we need to determine the IP address assigned to it. Many tools can accomplish this. In this article, we’ll be using `netdiscover`:
 
 ```shell
 sudo netdiscover -i eth0 -r 192.168.109.0/24
@@ -140,7 +140,7 @@ Let’s break this command down:
 - `-O` : [OS detection](https://nmap.org/book/man-os-detection.html)
 - `-oN` : save the scan results in **"scan-result.txt"**
 
-Here are the result of the Nmap scan:
+Here is the result of the `nmap` scan:
 
 ```shell
 Starting Nmap 7.94SVN ( https://nmap.org ) at 2024-06-13 10:45 EDT
