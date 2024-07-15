@@ -112,7 +112,7 @@ OS and Service detection performed. Please report any incorrect results at https
 Nmap done: 1 IP address (1 host up) scanned in 119.90 seconds
 ```
 
-There are only two open ports: 80 (HTTP) and 8080 (HTTP). If my memory serves me right, this version of mod_ssl is infected with RCE. We exploited it in the [Kioptrix 1](http://127.0.0.1:4000/posts/kioptrix-1-boot-to-root/) challenge. We will check that in the next section. 
+There are only two open ports: 80 (HTTP) and 8080 (HTTP). If my memory serves me right, this version of mod_ssl is infected with RCE. We exploited it in the [Kioptrix 1](https://sensei0x01.github.io/posts/kioptrix-1-boot-to-root/) challenge. We will check that in the next section. 
 
 For now, let’s check the website:
 
